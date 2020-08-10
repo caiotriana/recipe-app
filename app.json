@@ -1,0 +1,12 @@
+{
+  "name": "recipe-app",
+  "displayName": "recipe-app",
+  "expo": {
+    "name": "recipe-app",
+    "slug": "recipe-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
