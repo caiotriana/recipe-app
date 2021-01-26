@@ -3,19 +3,38 @@ import { Text, TouchableOpacity } from 'react-native';
 import styled from 'styled-components'
 
 const CardWrapper = styled.View` 
-    background-color : #f1f2f6;
+    background-color : rgba(0,0,0, .05);
     height : 10%;
     padding : 24px;
     flex : 1;
 `
 
-export default function Card(props) {
+const CardTitle = styled.Text` 
+    font-weight : bold;
+    font-size : 24px;
+    margin-bottom : 16px;
+`
+
+const CardIngredients = styled.Text` 
+    font-size : 16px;
+    margin-bottom : 16px;
+`
+
+export default function Card({data}) {
+  const { receita, ingredientes, modoPreparo } = data
+  
+  let treatmentIngredients = ingredientes.replaceAll(', ','\n')
+
   return (
     <>
         <CardWrapper >
-          <Text> {props.data.receita} </Text>
-          <Text> {props.data.ingredientes} </Text>
-          <Text> {props.data.modoPreparo} </Text>
+          <CardTitle> 
+              {receita} 
+          </CardTitle>
+          <CardIngredients> 
+            {treatmentIngredients} 
+          </CardIngredients>
+          <Text> {modoPreparo} </Text>
         </CardWrapper>
     </>
   );
